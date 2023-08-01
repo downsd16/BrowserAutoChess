@@ -1,3 +1,6 @@
-<div class="example-box" cdkDrag>
-    Drag me around
+<div class="parent">    
+    <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" [ngStyle]="{'transform': 'rotate(' + tiltAngle + 'deg)'}" *ngFor="let cardName of cardNames" cdkDrag></div>
+    </div>
+    <button (click)="addCard()">Add Card</button>
 </div>
