@@ -46,6 +46,7 @@
     
     //rotate the div X degrees, with X being tiltAngle, a variable in the component
     transform: rotate(0deg);
+    transform: translateY(0);
   }
   
   .cdk-drag-preview {

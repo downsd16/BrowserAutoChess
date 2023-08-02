@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class CanvasComponent {
   tiltAngle: number = 0;
+  vertOffset: number = 0;
+
   cardNames: Array<String> = [
     'Joe',
     'Jim',
@@ -18,6 +20,12 @@ export class CanvasComponent {
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.cardNames, event.previousIndex, event.currentIndex);
+  }
+
+  getSliderStyle(): any {
+    return {
+      transform: `rotate(${this.tiltAngle}deg) translateY(${this.vertOffset}px)`,
+    };
   }
 
   addCard() {
